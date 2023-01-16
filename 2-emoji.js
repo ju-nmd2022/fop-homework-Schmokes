@@ -3,6 +3,7 @@
     amazed by my first try. Maybe the next one will be more happy.
 */
 
+//background
 background(255, 255, 255);
 
 //face
