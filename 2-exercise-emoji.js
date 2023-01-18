@@ -3,9 +3,9 @@
     amazed by my first try. Maybe the next one will be more happy.
 */
 
-const x = 380;
-const y = 350;
-const s = 0.8;
+const x = 280;
+const y = 250;
+const s = 0.4;
 
 //background
 background(255, 255, 255);
