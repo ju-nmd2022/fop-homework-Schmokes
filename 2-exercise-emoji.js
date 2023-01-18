@@ -3,28 +3,31 @@
     amazed by my first try. Maybe the next one will be more happy.
 */
 
+const x = 380;
+const y = 350;
+
 //background
 background(255, 255, 255);
 
 //face
 fill(240, 216, 11);
 strokeWeight(3);
-ellipse(380, 350, 500);
+ellipse(x, y, 500);
 
 //left eye
 fill(255, 255, 255);
-ellipse(300, 300, 120);
+ellipse(x - 80, y - 50, 120);
 
 fill(0, 0, 0);
-ellipse(300, 265, 50);
+ellipse(x - 80, y - 85, 50);
 
 //rigth eye
 fill(255, 255, 255);
-ellipse(450, 300, 120);
+ellipse(x + 70, y - 50, 120);
 
 fill(0, 0, 0);
-ellipse(450, 265, 50);
+ellipse(x + 70, y - 85, 50);
 
 //mouth
 strokeWeight(5);
-line(300, 450, 450, 450);
+line(x - 80, y + 100, x + 85, y + 100);
