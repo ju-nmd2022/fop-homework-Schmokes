@@ -1,0 +1,52 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Flappy Trurtle game\r\n\r\nwe want to create a flappy bird game but with a trurtle. It will avoid seagras and seashels or riffs\r\n\r\n# Planning\r\n1. first draw the turtle\r\n2. next draw the background\r\n3. draw the seasgras\r\n4. draw the seashell or riff\r\nthe seagra and the seashells/riff must be able to move to the left"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function setup() {\r\n  window.createCanvas(600, 300);\r\n  background(255,255,255);\r\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Draw the trurtle\r\nwe want a function with a x- and y-coordinate, so I can control the position of it"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function ufo(x,y) {\r\n    ellipse(x,y, 60, 30);\r\n}\r\nfunction draw(){\r\n    background(255,0,255);\r\n    ufo(150,150);\r\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Draw the Background\r\nthe background is going to be purple because we have a radioactive apocalypse and the ground will be dark purple because it got infected and it is not save to touch it"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function screnery() {\r\n    push();\r\n    noStroke();\r\n    fill(\"purple\");\r\n    rect(0,0, width, height);\r\n    fill(\"violet\");\r\n    rect(0,250, width, 100);\r\n    pop();\r\n}\r\nfunction draw(){\r\n    screnery();\r\n    fill(\"lightgreen\");\r\n    ufo(150,150);\r\n\r\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Draw the obstacles\r\nNext we draw the windmil. It should be animated and should have different heights and positions provided as parameters"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "//the code is shared by Garrit because it is veryy veryy detailed"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Make the windmil move\r\n\r\nWe want to move the windmil with a specific speed every frame\r\n\r\nwe use variables: \r\nlet windmilX = value; \r\nwindmilX = windmilX - 1;"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Move the UFO\r\nWe want to add some gravity to make the UFO move down to eart\r\n\r\nSmall homework -> make the UFO fall"
+  }
+]
