@@ -2,37 +2,41 @@
     This is my first emoji which I made myself. It looks gloomy and not that
     amazed by my first try. Maybe the next one will be more happy.
 */
-let x = 100;
-let y = 200;
-let s = 0.4;
+
 const sentence = "The sky is blue 🌞";
 
-function emoji(x, y, s, r, g, b) {
+function emoji(x, y, s, r, g, b, eyesAreClosed) {
   //face
   fill(r, g, b);
   strokeWeight(3 * s);
   ellipse(x, y, 500 * s);
 
-  //left eye
-  fill(255, 255, 255);
-  ellipse(x - 80 * s, y - 50 * s, 120 * s);
+  if (eyesAreClosed) {
+    fill(0, 0, 0);
+    ellipse(x - 80 * s, y - 30 * s, 30, 10);
+    ellipse(x + 70 * s, y - 30 * s, 30, 10);
+  } else {
+    //left eye
+    fill(255, 255, 255);
+    ellipse(x - 80 * s, y - 50 * s, 120 * s);
 
-  fill(0, 0, 0);
-  ellipse(x - 80 * s, y - 85 * s, 50 * s);
+    fill(0, 0, 0);
+    ellipse(x - 80 * s, y - 85 * s, 50 * s);
 
-  //rigth eye
-  fill(255, 255, 255);
-  ellipse(x + 70 * s, y - 50 * s, 120 * s);
+    //rigth eye
+    fill(255, 255, 255);
+    ellipse(x + 70 * s, y - 50 * s, 120 * s);
 
-  fill(0, 0, 0);
-  ellipse(x + 70 * s, y - 85 * s, 50 * s);
+    fill(0, 0, 0);
+    ellipse(x + 70 * s, y - 85 * s, 50 * s);
+  }
 
   //mouth
   strokeWeight(5);
   line(x - 80 * s, y + 100 * s, x + 85 * s, y + 100 * s);
 
   //speechbubble
-  noFill();
+  /*  noFill();
   strokeWeight(3 * s);
   beginShape();
   vertex(x + 100, y - 140);
@@ -48,9 +52,9 @@ function emoji(x, y, s, r, g, b) {
   fill(0, 0, 255);
   textSize(20);
   text(sentence, x + 60, y - 153);
-}
+} */
 
-/* function draw() {
+  /* function draw() {
   clear();
   background(255, 255, 255);
   emoji(mouseX, mouseY, s, 240, 216, 11);
@@ -59,7 +63,13 @@ function emoji(x, y, s, r, g, b) {
   y = y + 1;
   s = s + 0.005;
 } */
+}
 
-function mouseClicked() {
-  emoji(mouseX, mouseY, s, 250, 26, 75);
+function draw() {
+  background(255);
+  if (mouseIsPressed === true) {
+    emoji(150, 150, 0.4, 230, 50, 40, true);
+  } else {
+    emoji(150, 150, 0.4, 230, 50, 40, false);
+  }
 }
