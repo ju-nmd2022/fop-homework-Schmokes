@@ -2,7 +2,7 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "# Flappy Trurtle game\r\n\r\nwe want to create a flappy bird game but with a trurtle. It will avoid seagras and seashels or riffs\r\n\r\n# Planning\r\n1. first draw the turtle\r\n2. next draw the background\r\n3. draw the seasgras\r\n4. draw the seashell or riff\r\nthe seagra and the seashells/riff must be able to move to the left"
+    "value": "# Flappy Trurtle game\r\n\r\nwe want to create a flappy bird game but with a trurtle. It will avoid seagras and stones\r\n\r\n# Planning\r\n1. first draw the turtle\r\n2. next draw the background\r\n3. draw the seasgras\r\n4. draw the pile of stones\r\nthe seagra and the pile of stones must be able to move to the left"
   },
   {
     "kind": 2,
@@ -17,17 +17,17 @@
   {
     "kind": 2,
     "language": "javascript",
-    "value": "function ufo(x,y) {\r\n    ellipse(x,y, 60, 30);\r\n}\r\nfunction draw(){\r\n    background(255,0,255);\r\n    ufo(150,150);\r\n}"
+    "value": "function turtle(x,y) {\r\n    noStroke();\r\n    scale(0.9);\r\n\r\n//Front Fins\r\nfill(0, 107, 61);\r\nbeginShape();\r\nvertex(x + 5, y);\r\nbezierVertex(x + 10, y + 13, x + 8, y + 15, x - 2, y + 25);\r\nvertex(x + 3, y + 25);\r\nbezierVertex(x + 20, y + 20, x + 16, y + 10, x + 15, y);\r\nendShape();\r\n\r\nfill(6, 156, 86);\r\nbeginShape();\r\nvertex(x + 20, y);\r\nbezierVertex(x + 25, y + 15, x + 25, y + 23, x + 10, y + 30);\r\nvertex(x + 3, y + 30);\r\nvertex(x + 15, y + 17);\r\nvertex(x + 10, y);\r\nendShape();\r\n\r\n\r\n//Back Fins\r\nfill(0, 107, 61);\r\nbeginShape();\r\nvertex(x - 38, y - 9);\r\nvertex(x - 49, y - 8);\r\nbezierVertex (x - 47, y + 3, x - 34, y + 2, x - 32, y - 5);\r\nendShape();\r\n\r\nfill(6, 156, 86);\r\nbeginShape();\r\nvertex(x - 34, y -5);\r\nvertex(x - 48, y);\r\nbezierVertex(x - 42, y + 10, x - 38, y + 8, x - 27, y);\r\nendShape();\r\n\r\n//Head\r\npush();\r\nbeginShape();\r\nvertex(x + 18, y - 8);\r\nbezierVertex(x + 45, y - 38, x + 43, y + 20, x + 20, y -3);\r\nendShape();\r\npop();\r\n\r\n//Shell\r\npush();\r\nfill(255, 104, 30);\r\nbeginShape();\r\nvertex(x - 40, y - 10);\r\nbezierVertex(x - 10, y + 20, x + 10 , y + 5, x + 20, y);\r\nbezierVertex( x + 20, y - 35, x - 20, y - 30, x - 37, y - 10);\r\nvertex(x - 40, y - 10);\r\nendShape();\r\npop();\r\n\r\n\r\n//Eye\r\npush();\r\nfill(0);\r\nellipse(x + 32, y - 8, 3, 5);\r\npop();\r\n\r\n//Details on the shell\r\nfill(255, 170, 14);\r\ntriangle(x - 17, y - 18, x - 28, y - 15, x - 19, y - 7);\r\ntriangle(x - 15, y - 3, x - 8, y - 17, x - 4, y - 10);\r\ntriangle(x - 8, y + 1, x + 9, y - 3, x + 7, y - 11);\r\ntriangle(x, y - 13, x - 4, y - 20, x + 4, y - 20);\r\n}\r\nfunction draw(){\r\n    background(255,255,255);\r\n    turtle(150,150);\r\n}"
   },
   {
     "kind": 1,
     "language": "markdown",
-    "value": "# Draw the Background\r\nthe background is going to be purple because we have a radioactive apocalypse and the ground will be dark purple because it got infected and it is not save to touch it"
+    "value": "# Draw the Background\r\nthe background is going to have a gradient since the water colour changes when we go further down and at the bottom of the canvas we need a floor which is going to portait sand"
   },
   {
     "kind": 2,
     "language": "javascript",
-    "value": "function screnery() {\r\n    push();\r\n    noStroke();\r\n    fill(\"purple\");\r\n    rect(0,0, width, height);\r\n    fill(\"violet\");\r\n    rect(0,250, width, 100);\r\n    pop();\r\n}\r\nfunction draw(){\r\n    screnery();\r\n    fill(\"lightgreen\");\r\n    ufo(150,150);\r\n\r\n}"
+    "value": "function screnery() {\r\n    push();\r\n    noStroke();\r\n    //gradient background\r\n    fill(\"blue\");\r\n    rect(0,0, width, height);\r\n\r\n    //sand ground\r\n    fill(246, 228, 173);\r\n    rect(0,250, width, 100);\r\n    pop();\r\n}\r\nfunction draw(){\r\n    screnery();\r\n    fill(\"lightgreen\");\r\n    turtle(150,150);\r\n\r\n}"
   },
   {
     "kind": 1,
