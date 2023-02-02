@@ -27,26 +27,66 @@
   {
     "kind": 2,
     "language": "javascript",
-    "value": "function screnery() {\r\n    push();\r\n    noStroke();\r\n    //gradient background\r\n    fill(\"blue\");\r\n    rect(0,0, width, height);\r\n\r\n    //sand ground\r\n    fill(246, 228, 173);\r\n    rect(0,250, width, 100);\r\n    pop();\r\n}\r\nfunction draw(){\r\n    screnery();\r\n    fill(\"lightgreen\");\r\n    turtle(150,150);\r\n\r\n}"
+    "value": "function screnery() {\r\npush();\r\n    noStroke();\r\n    //sand ground\r\n    fill(246, 228, 173);\r\n    rect(0,300, width, 100);\r\n    pop();\r\n}\r\n\r\n//gradient background\r\nlet c1,c2;\r\nlet height = 400;\r\nlet width = 900;\r\n\r\nfunction gradient() {\r\n  createCanvas(windowWidth, windowHeight);\r\n  c1 = color(164, 219, 232);\r\n  c2 = color(32, 42, 68);\r\n  \r\n  for(let y=0; y<height; y++){\r\n    n = map(y,0,height,0,2);\r\n    let newc = lerpColor(c1,c2,n);\r\n    stroke(newc);\r\n    line(0,y,width, y);\r\n  }\r\n}\r\n\r\nfunction draw(){\r\n    screnery();\r\n    fill(\"lightgreen\");\r\n    turtle(150,150);\r\n\r\n}"
   },
   {
     "kind": 1,
     "language": "markdown",
-    "value": "# Draw the obstacles\r\nNext we draw the windmil. It should be animated and should have different heights and positions provided as parameters"
+    "value": "# Draw the obstacles\r\nNext we draw the sea gras. It should be animated and should have different heights and positions provided as parameters"
   },
   {
     "kind": 2,
     "language": "javascript",
-    "value": "//the code is shared by Garrit because it is veryy veryy detailed"
+    "value": "//Sea gras"
   },
   {
     "kind": 1,
     "language": "markdown",
-    "value": "# Make the windmil move\r\n\r\nWe want to move the windmil with a specific speed every frame\r\n\r\nwe use variables: \r\nlet windmilX = value; \r\nwindmilX = windmilX - 1;"
+    "value": "# Make the seagras move\r\n\r\nWe want to move the sea gras with a specific speed every frame\r\n\r\nwe use variables: \r\nlet windmilX = value; \r\nwindmilX = windmilX - 1;"
   },
   {
     "kind": 1,
     "language": "markdown",
-    "value": "# Move the UFO\r\nWe want to add some gravity to make the UFO move down to eart\r\n\r\nSmall homework -> make the UFO fall"
+    "value": "# Loop the sea gras endlessly\r\n\r\nWhen the windmil is out of the screen on the left side then mve it back to the right side so it can move from rigth to left again\r\n\r\nif(windmilX <-100) {windmilX = width + 100;}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Move the Turtle\r\nWe want to add some gravity to make the turtle move down to eart\r\ny-position of Turtle, add some value to the  y-position \r\n\r\nlet ufoY = 100; --> add this to the y position "
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "let turtleY = 100;\r\nlet velocity = 1;\r\nlet acceleration = 0.1;\r\n\r\nfunction draw(){\r\n    gradient();\r\n    screnery();\r\n    fill(\"lightgreen\");\r\n    turtle(150,turtleY);\r\n\r\n    turtleY = turtleY + velocity;\r\n    velocity = velocity + acceleration;\r\n}"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Stop the turtle on the ground\r\nufoY compared to the ground level with an if statement and stop it \r\nground level = 200"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "let isGameActive = true;\r\n\r\nfunction draw(){\r\n    gradient();\r\n    screnery();\r\n    fill(\"lightgreen\");\r\n    turtle(150,turtleY);\r\n\r\n    if (isGameActive) {\r\n    turtleY = turtleY + velocity;\r\n    velocity = velocity + acceleration;\r\n\r\n    if (turtleY > 350) {\r\n        isGameActive = false;\r\n    }\r\n}\r\n}\r\n\r\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Move the turtle on click\r\non mouse is pressed we added decelleration"
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "acceleration = 0.1;\r\n\r\nfunction draw(){\r\n    gradient();\r\n    screnery();\r\n    fill(\"lightgreen\");\r\n    turtle(150,turtleY);\r\n\r\n    if (isGameActive) {\r\n    turtleY = turtleY + velocity;\r\n    velocity = velocity + acceleration;\r\n\r\n        if (mouseIsPressed) {\r\n            velocity = velocity - 0.3;\r\n        }\r\n\r\n    if (turtleY > 350) {\r\n        isGameActive = false;\r\n    }\r\n}\r\n}\r\n"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Collide the trutle with the obsticals\r\n\"collision boxes\" "
+  },
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": ""
   }
 ]
