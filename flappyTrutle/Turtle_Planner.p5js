@@ -27,7 +27,7 @@
   {
     "kind": 2,
     "language": "javascript",
-    "value": "function screnery() {\r\npush();\r\n    noStroke();\r\n    //sand ground\r\n    fill(246, 228, 173);\r\n    rect(0,300, width, 100);\r\n    pop();\r\n}\r\n\r\n//gradient background\r\nlet c1,c2;\r\nlet height = 400;\r\nlet width = 900;\r\n\r\nfunction gradient() {\r\n  createCanvas(windowWidth, windowHeight);\r\n  c1 = color(164, 219, 232);\r\n  c2 = color(32, 42, 68);\r\n  \r\n  for(let y=0; y<height; y++){\r\n    n = map(y,0,height,0,2);\r\n    let newc = lerpColor(c1,c2,n);\r\n    stroke(newc);\r\n    line(0,y,width, y);\r\n  }\r\n}\r\n\r\nfunction draw(){\r\n    screnery();\r\n    fill(\"lightgreen\");\r\n    turtle(150,150);\r\n\r\n}"
+    "value": "function screnery() {\r\npush();\r\n    noStroke();\r\n    //sand ground\r\n    fill(246, 228, 173);\r\n    rect(0,300, width, 100);\r\n    pop();\r\n}\r\n\r\n//gradient background\r\nlet c1,c2;\r\nlet height = 400;\r\nlet width = 900;\r\n\r\nfunction gradient() {\r\n  createCanvas(windowWidth, windowHeight);\r\n  c1 = color(164, 219, 232);\r\n  c2 = color(32, 42, 68);\r\n  \r\n  for(let y=0; y<height; y++){\r\n    n = map(y,0,height,0,2);\r\n    let newc = lerpColor(c1,c2,n);\r\n    stroke(newc);\r\n    line(0,y,width, y);\r\n  }\r\n}\r\n\r\nfunction draw(){\r\n    gradient();\r\n    screnery();\r\n    fill(\"lightgreen\");\r\n    turtle(150,150);\r\n\r\n}"
   },
   {
     "kind": 1,
