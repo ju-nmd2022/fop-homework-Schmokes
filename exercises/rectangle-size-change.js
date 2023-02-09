@@ -1,13 +1,13 @@
 background(255);
 
-let count = 0;
-let x = 100;
-let y = 100;
-let rectSize = 30;
+let size = 100;
+let margin = 10;
+let x = margin;
 
-while (count < 4) {
-  rect(x, y, rectSize, rectSize);
+for (let i = 0; i < 5; i++) {
+  const percentage = (i + 1) / 5;
+  console.log(percentage);
+  rect(x, 100 - (size / 2) * percentage, size * percentage, size * percentage);
 
-  x = x + 50;
-  rectSize = rectSize + 20;
+  x = x + size * percentage + margin;
 }
