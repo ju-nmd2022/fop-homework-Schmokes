@@ -38,6 +38,7 @@ function createPostElement(post) {
   infoElement.classList.add("padding");
   articleElement.appendChild(infoElement);
 
+  //use for marking a task as done
   const likeButtonElement = document.createElement("button");
   if (post.likes.indexOf(currentUser) === -1) {
     likeButtonElement.innerText = "🤍";
